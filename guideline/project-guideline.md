@@ -59,4 +59,28 @@
 - 数据库中的时间字段必须以 UTC 时间存储
 - 禁止返回无时区语义的时间字符串
 
+## 7. 文档规范（Documentation）
+
+- 以 `blueprint/` 作为设计文档根目录。
+- 文档命名采用以下规则：
+	- 英文版文件使用 `.en` 后缀（如 `requirement.en.md`、`order-server.spec.en.yaml`）。
+	- 中英文同名文档必须保持结构一致、语义等价。
+
+- 语言要求：
+	- `schema` 文档仅保留英文版本（English only）。
+	- `spec`、`plan`、`README`、`requirement` 必须提供中英双语版本。
+
+- 最小文档清单（推荐）：
+	- `blueprint/README.md` + `blueprint/README.en.md`
+	- `blueprint/implementation-plan.md` + `blueprint/implementation-plan.en.md`
+	- `blueprint/requirement/requirement.md` + `blueprint/requirement/requirement.en.md`
+	- `blueprint/spec/*.spec.yaml` + 对应 `blueprint/spec/*.spec.en.yaml`
+	- `blueprint/schema/*.en.yaml`（仅英文）
+
+- `spec` 来源标注规范：
+	- `spec` 文件中的来源必须使用“备注”方式标注在行尾，格式为：`# 来源：xxx`。
+	- 来源标注应覆盖每一条规范内容（非空、非注释正文行）。
+	- 禁止再使用 `source:` 字段将来源混入规范正文层级，避免将来源元信息误解为 `spec` 业务内容。
+	- 推荐来源值：`需求`、`schema`、`guideline`、`共享契约`、`工程补充`、`共享契约+工程补充`。
+
 
