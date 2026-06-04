@@ -5,9 +5,11 @@
 
 ## 1. 命名约定（Naming）
 
+- YAML 文件中的所有关键字（key）统一使用**单数形式**，即使其值为数组（如 `step`、`card`、`product`，而非 `steps`、`cards`、`products`）
 - 工程中的 API 请求/响应字段使用 `camelCase`
 - 数据库表名与字段使用 `snake_case`
 - Python 工程命名采用 `snake_case`
+- 文件系统中的文件名统一使用连词符 `-`（kebab-case），避免使用下划线 `_` 作为文件名连接符
 - 目录命名采用 `snake_case`
 - 工程目录名与 Git 仓库名保持一致
 - 枚举值（状态等）使用全大写字符串，如 `SUCCESS`、`FAIL`
@@ -68,13 +70,13 @@
 
 - 语言要求：
 	- `schema` 文档仅保留英文版本（English only）。
-	- `spec`、`plan`、`README`、`requirement` 必须提供中英双语版本。
+	- `spec`、`plan`、`README`、`requirement` 中文版必须存在；英文版根据需要提供。
 
 - 最小文档清单（推荐）：
 	- `blueprint/README.md` + `blueprint/README.en.md`
 	- `blueprint/implementation-plan.md` + `blueprint/implementation-plan.en.md`
 	- `blueprint/requirement/requirement.md` + `blueprint/requirement/requirement.en.md`
-	- `blueprint/spec/*.spec.yaml` + 对应 `blueprint/spec/*.spec.en.yaml`
+	- `blueprint/spec/*.spec.yaml`
 	- `blueprint/schema/*.en.yaml`（仅英文）
 
 - `spec` 来源标注规范：

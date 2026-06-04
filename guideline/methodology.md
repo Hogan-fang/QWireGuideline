@@ -102,8 +102,7 @@ blueprint/
 ├── schema/       # 结构契约（仅英文）
 │   └── *.en.yaml
 └── spec/         # 行为需求
-          ├── *.spec.yaml
-          └── *.spec.en.yaml
+          └── *.spec.yaml
 ```
 
 其中：
@@ -112,5 +111,5 @@ blueprint/
 - `implementation-plan.md` 提供项目的构建计划
 - 文档语言要求：
      - `schema` 仅保留英文版本（English only）
-     - `spec`、`plan`、`README`、`requirement` 必须提供中英双语版本
+     - `spec`、`plan`、`README`、`requirement` 中文版必须存在；英文版根据需要提供
 - 如果项目包含较多模块，可以在 `blueprint/` 下按模块建立目录，并为每个模块建立相应的需求子目录
