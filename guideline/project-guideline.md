@@ -85,4 +85,6 @@
 	- 禁止再使用 `source:` 字段将来源混入规范正文层级，避免将来源元信息误解为 `spec` 业务内容。
 	- 推荐来源值：`需求`、`schema`、`guideline`、`共享契约`、`工程补充`、`共享契约+工程补充`。
 
-
+- `schema` 格式要求
+    - 对于yaml文件的schema设计需要使用 json schema规范
+	- 接口的Schema描述采用Java Interface的形式简写在md文件中
