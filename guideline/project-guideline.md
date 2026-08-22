@@ -63,7 +63,7 @@
 
 ## 7. 文档规范（Documentation）
 
-- 以 `blueprint/` 作为设计文档根目录。
+- 以 `QWireDesign/` 作为统一设计文档根目录，并按子项目名称建立目录（如 `Core/`、`MockAPI/`、`TestAPI/`）。
 - 文档命名采用以下规则：
 	- 英文版文件使用 `.en` 后缀（如 `requirement.en.md`、`order-server.spec.en.yaml`）。
 	- 中英文同名文档必须保持结构一致、语义等价。
@@ -73,11 +73,14 @@
 	- `spec`、`plan`、`README`、`requirement` 中文版必须存在；英文版根据需要提供。
 
 - 最小文档清单（推荐）：
-	- `blueprint/README.md` + `blueprint/README.en.md`
-	- `blueprint/implementation-plan.md` + `blueprint/implementation-plan.en.md`
-	- `blueprint/requirement/requirement.md` + `blueprint/requirement/requirement.en.md`
-	- `blueprint/spec/*.spec.yaml`
-	- `blueprint/schema/*.en.yaml`（仅英文）
+	- `QWireDesign/README.md`
+	- `QWireDesign/change-log.md`
+	- `QWireDesign/<子项目>/README.md`
+	- `QWireDesign/<子项目>/change-log.md`
+	- `QWireDesign/<子项目>/implementation-plan.md`
+	- `QWireDesign/<子项目>/requirement/requirement.md`
+	- `QWireDesign/<子项目>/spec/*.spec.yaml`
+	- `QWireDesign/<子项目>/schema/*`（schema 内容仅使用英文）
 
 - `spec` 来源标注规范：
 	- `spec` 文件中的来源必须使用“备注”方式标注在行尾，格式为：`# 来源：xxx`。
@@ -88,3 +91,12 @@
 - `schema` 格式要求
     - 对于yaml文件的schema设计需要使用 json schema规范
 	- 接口的Schema描述采用Java Interface的形式简写在md文件中
+
+## 8. Change Log 登记
+
+- `QWireDesign/` 根目录和每个子项目设计目录必须维护 `change-log.md`。
+- 重大重构完成后必须立即登记，至少记录：时间、重构内容、影响范围、路径或契约迁移关系、验证结果。
+- 重大重构包括但不限于：目录迁移、模块拆分或合并、核心架构调整、公共接口或 schema 契约变更、跨项目依赖关系调整。
+- 时间使用 ISO 8601 UTC 格式；同一天无法确定具体时间时可使用 `YYYY-MM-DD`，并明确标注为 UTC 日期。
+- 记录按时间倒序排列，最新变更置于文件顶部；历史记录不得覆盖或删除，修正时应追加说明。
+- 仅影响拼写、排版或无行为影响的小型文档修订可不登记；若小型变更属于重大重构的一部分，应合并记录在该次重构条目中。
